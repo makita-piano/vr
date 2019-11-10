@@ -15,26 +15,9 @@
         </v-btn>
       </v-app-bar>
       <v-content>
-        <Index/>
+        <router-view></router-view>
       </v-content>
     </v-card>
   </div>
 
 </template>
-
-
-<script>
-import Index from './components/Index';
-
-export default {
-  name: 'App',
-
-  components: {
-    Index,
-  },
-
-  data: () => ({
-    //
-  }),
-};
-</script>
