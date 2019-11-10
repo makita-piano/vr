@@ -15,7 +15,7 @@
         </v-btn>
       </v-app-bar>
       <v-content>
-        <HelloWorld/>
+        <Index/>
       </v-content>
     </v-card>
   </div>
@@ -24,13 +24,13 @@
 
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import Index from './components/Index';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    Index,
   },
 
   data: () => ({
