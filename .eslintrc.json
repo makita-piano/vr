@@ -21,7 +21,7 @@
         "node": true,
         "browser": true
     },
-    "extends": "eslint:recommended",
+    "extends": "plugin:vue/recommended",
     "ecmaFeatures": {
         "jsx": true,
         "experimentalObjectRestSpread": true
