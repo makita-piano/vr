@@ -1,35 +1,34 @@
 <template>
   <div>
-    <v-app>
-    <v-card class="overflow-hidden">
-      <v-app-bar
-        dark
-      >
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>
+    <VApp>
+      <VCard class="overflow-hidden">
+        <VAppBar
+          dark
+        >
+          <VAppBarNavIcon />
 
-        <v-toolbar-title>vrgames-index</v-toolbar-title>
+          <VToolbarTitle>vrgames-index</VToolbarTitle>
 
-        <v-spacer></v-spacer>
+          <VSpacer />
 
-        <v-btn icon>
-          <v-icon>mdi-magnify</v-icon>
-        </v-btn>
-      </v-app-bar>
-    </v-card>
-    <v-content>
-      <router-view></router-view>
-    </v-content>
-    <v-card class="overflow-hidden">
-      <v-footer
-        dark
-        padless
-      >
-        <v-card-text class="py-2 white--text text-center">
-          {{ new Date().getFullYear() }} - <strong>vrgames-index</strong>
-        </v-card-text>
-      </v-footer>
-    </v-card>
-    </v-app>
+          <VBtn icon>
+            <VIcon>mdi-magnify</VIcon>
+          </VBtn>
+        </VAppBar>
+      </VCard>
+      <VContent>
+        <RouterView />
+      </VContent>
+      <VCard class="overflow-hidden">
+        <VFooter
+          dark
+          padless
+        >
+          <VCardText class="py-2 white--text text-center">
+            {{ new Date().getFullYear() }} - <strong>vrgames-index</strong>
+          </VCardText>
+        </VFooter>
+      </VCard>
+    </VApp>
   </div>
-
 </template>

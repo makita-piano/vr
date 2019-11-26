@@ -1,38 +1,41 @@
 <template>
-    <v-container pa-0>
-      <v-row>
-        <v-col
-          cols="6"
-          md="2"
-          v-for="e in gamedata"
-          :key="e.id"
+  <VContainer pa-0>
+    <VRow>
+      <VCol
+        v-for="e in gamedata"
+        :key="e.id"
+        cols="6"
+        md="2"
+      >
+        <RouterLink
+          to="/"
+          exact
         >
-            <router-link to="/" exact>
-              {{ e.name }}
-            </router-link>
-        </v-col>
-      </v-row>
-    </v-container>
+          {{ e.name }}
+        </RouterLink>
+      </VCol>
+    </VRow>
+  </VContainer>
 </template>
 
 <script>
-  import axios from 'axios';
+import axios from "axios";
 
-  export default {
-    name: 'index',
-    components: {},
-    data() {
-      return {
-        gamedata: require('../assets/json/gamedata.json'),
-      };
-    },
-    mounted: function() {
-      window.addEventListener('resize', this.handleChange());
-    },
-    methods: {
-      getInfoLink(name) {
-        return "/a";
-      },
-    },
-  };
+export default {
+	name: "Index",
+	components: {},
+	data() {
+		return {
+			gamedata: require("../assets/json/gamedata.json"),
+		};
+	},
+	mounted: function() {
+		window.addEventListener("resize", this.handleChange());
+	},
+	methods: {
+		getInfoLink(name) {
+			return "/a";
+		},
+	},
+};
 </script>
