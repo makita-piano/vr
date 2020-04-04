@@ -1,3 +1,4 @@
+/* color */
 .color-light-orange{
   color: "#d9c4a9"
 }
@@ -15,4 +16,13 @@
 }
 .color-bg-wine-red{
   background-color: "#77324a"
+}
+
+/* index */
+.table{
+  overflow-x: auto;
+  white-space: nowrap;
+}
+th{
+  text-align: left;
 }

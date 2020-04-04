@@ -1,61 +1,10 @@
 <template>
   <VContainer pa-0>
-    <VRow>
-      <VCol
-        cols="12"
-      >
-        <VRow>
-          <VCol
-          >
-            release_date
-          </VCol>
-          <VCol
-          >
-            free
-          </VCol>
-          <VCol
-          >
-            name
-          </VCol>
-          <VCol
-          >
-            sickness_rating
-          </VCol>
-          <VCol
-          >
-            devises
-          </VCol>
-        </VRow>
-      </VCol>
-      <VCol
-        v-for="e in list"
-        :key="e.id"
-        cols="12"
-      >
-        <VRow>
-          <VCol
-          >
-            {{ e.release_date }}
-          </VCol>
-          <VCol
-          >
-            {{e.is_free}}
-          </VCol>
-          <VCol
-          >
-            {{e.name}}
-          </VCol>
-          <VCol
-          >
-            {{e.sickness_rating}}
-          </VCol>
-          <VCol
-          >
-            {{e.devises}}
-          </VCol>
-        </VRow>
-      </VCol>
-    </VRow>
+    <v-data-table
+      :headers="table_headers"
+      :items="list_formated(this.list)"
+    >
+    </v-data-table>
   </VContainer>
 </template>
 
@@ -68,8 +17,29 @@
   	components: {},
   	data() {
   		return {
-  			list: null,
-        tmp: null
+  			list: [],
+        table_headers: [
+          {
+            text:  "release_date",
+            value: "release_date",
+          },
+          {
+            text:  "free",
+            value: "is_free",
+          },
+          {
+            text:  "name",
+            value: "name",
+          },
+          {
+            text:  "sickness_rating",
+            value: "sickness_rating",
+          },
+          {
+            text:  "devises",
+            value: "devises",
+          },
+        ],
   		};
   	},
   	mounted: function() {
@@ -78,9 +48,18 @@
         .then(response => { this.list = response.data });
   	},
     methods: {
-      date_formated: function(date) {
-        return moment(date).format("YYYY/MM/DD");
-      }
-    }
+      list_formated: function(list) {
+        if (list.length === 0) {
+          return [];
+        }
+        var tmp = JSON.stringify(list, function(key, value) {
+          if(key === 'release_date') {
+            return moment(value).format("YYYY/MM/DD");
+          }
+          return value;
+        });
+        return JSON.parse(tmp);
+      },
+    },
   };
 </script>
