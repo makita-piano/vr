@@ -5,7 +5,7 @@
         <VAppBar
           dark
         >
-          <VToolbarTitle>vrgames-index</VToolbarTitle>
+          <VToolbarTitle>VR Games Index</VToolbarTitle>
         </VAppBar>
       </VCard>
       <VContent>
