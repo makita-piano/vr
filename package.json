@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.19.0",
     "core-js": "^3.3.2",
+    "dayjs": "^1.8.17",
     "eslint-config-vue": "^2.0.2",
     "uikit": "^3.2.4",
     "vue": "^2.6.10",
