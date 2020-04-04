@@ -26,3 +26,9 @@
 th{
   text-align: left;
 }
+.paid{
+  color: skyblue;
+}
+.free{
+  color: #999;
+}

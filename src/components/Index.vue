@@ -19,6 +19,7 @@
         :items="list_formated(this.list)"
         :search="search"
         hide-default-footer
+        @click:row="on_click_row"
       >
       </v-data-table>
     </v-card>
@@ -74,9 +75,19 @@
           if(key === 'release_date') {
             return moment(value).format("YYYY/MM/DD");
           }
+          if(key === 'is_free') {
+            if (value === "") {
+              return "free";
+            } else {
+              return "paid";
+            }
+          }
           return value;
         });
         return JSON.parse(tmp);
+      },
+      on_click_row(data) {
+        console.log(data);
       },
     },
   };
