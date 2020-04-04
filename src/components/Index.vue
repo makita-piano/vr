@@ -24,9 +24,19 @@
       </v-data-table>
     </v-card>
     <v-dialog v-model="dialog" max-width="500px">
-    aaaa
-    aaaaaa
-    aaa
+      <v-card>
+        <v-card-title>
+          <span class="headline">aaa</span>
+        </v-card-title>
+
+        <v-card-text>
+        </v-card-text>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="blue darken-1" text @click="dialog_close">Close</v-btn>
+        </v-card-actions>
+      </v-card>
     </v-dialog>
   </VContainer>
 </template>
