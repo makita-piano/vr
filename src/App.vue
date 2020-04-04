@@ -5,15 +5,7 @@
         <VAppBar
           dark
         >
-          <VAppBarNavIcon />
-
           <VToolbarTitle>vrgames-index</VToolbarTitle>
-
-          <VSpacer />
-
-          <VBtn icon>
-            <VIcon>mdi-magnify</VIcon>
-          </VBtn>
         </VAppBar>
       </VCard>
       <VContent>
