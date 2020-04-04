@@ -18,6 +18,7 @@
         :headers="table_headers"
         :items="list_formated(this.list)"
         :search="search"
+        hide-default-footer
       >
       </v-data-table>
     </v-card>
