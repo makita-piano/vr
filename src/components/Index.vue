@@ -1,10 +1,26 @@
 <template>
   <VContainer pa-0>
-    <v-data-table
-      :headers="table_headers"
-      :items="list_formated(this.list)"
-    >
-    </v-data-table>
+    <v-card-title>
+      Nutrition
+      <v-spacer></v-spacer>
+      <v-text-field
+        v-model="search"
+        append-icon="mdi-magnify"
+        label="Search"
+        single-line
+        hide-details
+        >
+      </v-text-field>
+    </v-card-title>
+    <v-card>
+      <v-spacer></v-spacer>
+      <v-data-table
+        :headers="table_headers"
+        :items="list_formated(this.list)"
+        :search="search"
+      >
+      </v-data-table>
+    </v-card>
   </VContainer>
 </template>
 
@@ -18,6 +34,7 @@
   	data() {
   		return {
   			list: [],
+        search: '',
         table_headers: [
           {
             text:  "release_date",
