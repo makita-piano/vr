@@ -18,11 +18,12 @@
   background-color: "#77324a"
 }
 
-/* index */
-.table{
-  overflow-x: auto;
+/* semantic */
+.white-space-nowrap{
   white-space: nowrap;
 }
+
+/* index */
 th{
   text-align: left;
 }

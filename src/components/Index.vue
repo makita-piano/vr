@@ -20,6 +20,8 @@
         :search="search"
         hide-default-footer
         @click:row="on_click_row"
+        :mobile-breakpoint=0
+        class="white-space-nowrap"
       >
       </v-data-table>
     </v-card>
