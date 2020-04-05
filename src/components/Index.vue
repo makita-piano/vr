@@ -38,16 +38,63 @@
           </v-card-title>
 
           <v-card-text>
-            <v-row v-for="(item,key) in dialog_item" key="item.name">
+            <v-row>
               <v-col
                 cols="6"
               >
-                {{key}}
+                release_date
               </v-col>
               <v-col
                 cols="6"
               >
-                {{item}}
+                {{dialog_item.release_date}}
+              </v-col>
+              <v-col
+                cols="6"
+              >
+                sickness_rating
+              </v-col>
+              <v-col
+                cols="6"
+              >
+                {{dialog_item.sickness_rating}}
+              </v-col>
+              <v-col
+                cols="6"
+              >
+                devises
+              </v-col>
+              <v-col
+                cols="6"
+              >
+                {{dialog_item.devises}}
+              </v-col>
+              <v-col
+                cols="6"
+              >
+                publisher
+              </v-col>
+              <v-col
+                cols="6"
+              >
+                {{dialog_item.publisher}}
+              </v-col>
+              <v-col
+                cols="6"
+              >
+                developer
+              </v-col>
+              <v-col
+                cols="6"
+              >
+                {{dialog_item.developer}}
+              </v-col>
+              <v-col
+                cols="12"
+              >
+                <v-row justify="center">
+                    <v-btn color="primary" :href="dialog_item.url_official" target="_blank" class="text-decoration-none-hover">official site</v-btn>
+                </v-row>
               </v-col>
             </v-row>
           </v-card-text>

@@ -22,6 +22,9 @@
 .white-space-nowrap{
   white-space: nowrap;
 }
+.text-decoration-none-hover:hover{
+  text-decoration: none;
+}
 
 /* index */
 th{
