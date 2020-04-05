@@ -1,16 +1,23 @@
 <template>
   <VContainer pa-0>
     <v-card-title>
-      Nutrition
-      <v-spacer></v-spacer>
-      <v-text-field
-        v-model="search"
-        append-icon="mdi-magnify"
-        label="Search"
-        single-line
-        hide-details
+      <v-row
+        justify="center"
+      >
+        <v-col
+          cols="12"
+          md="9"
         >
-      </v-text-field>
+          <v-text-field
+            v-model="search"
+            append-icon="mdi-magnify"
+            label="Search"
+            single-line
+            hide-details
+          >
+          </v-text-field>
+        </v-col>
+      </v-row>
     </v-card-title>
     <v-card>
       <v-spacer></v-spacer>
@@ -31,6 +38,18 @@
           </v-card-title>
 
           <v-card-text>
+            <v-row v-for="(item,key) in dialog_item" key="item.name">
+              <v-col
+                cols="6"
+              >
+                {{key}}
+              </v-col>
+              <v-col
+                cols="6"
+              >
+                {{item}}
+              </v-col>
+            </v-row>
           </v-card-text>
 
           <v-card-actions>
@@ -40,7 +59,6 @@
         </v-card>
       </v-dialog>
     </v-card>
-
   </VContainer>
 </template>
 
@@ -92,6 +110,7 @@
       },
     },
     methods: {
+      //list create
       list_formated: function(list) {
         if (list.length === 0) {
           return [];
@@ -111,6 +130,8 @@
         });
         return JSON.parse(tmp);
       },
+
+      //dialog
       on_click_row(data) {
         this.dialog = true;
         this.dialog_item = data;
