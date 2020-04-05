@@ -29,6 +29,7 @@
         @click:row="on_click_row"
         :mobile-breakpoint=0
         class="white-space-nowrap"
+        :custom-filter="filter_devises"
       >
       </v-data-table>
       <v-dialog v-model="dialog" max-width="500px">
@@ -183,8 +184,14 @@
         this.dialog = true;
         this.dialog_item = data;
       },
-      dialog_close () {
+      dialog_close() {
         this.dialog = false;
+      },
+
+      //search
+      filter_devises(value, search, item) {
+        console.log(search);
+        return item.devises != ""
       },
     },
   };

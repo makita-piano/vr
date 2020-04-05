@@ -1,23 +1,3 @@
-/* color */
-.color-light-orange{
-  color: "#d9c4a9"
-}
-.color-dark-brown{
-  color: "#845d5e"
-}
-.color-wine-red{
-  color: "#77324a"
-}
-.color-bg-light-orange{
-  background-color: "#d9c4a9"
-}
-.color-bg-dark-browne{
-  background-color: "#845d5e"
-}
-.color-bg-wine-red{
-  background-color: "#77324a"
-}
-
 /* semantic */
 .white-space-nowrap{
   white-space: nowrap;
