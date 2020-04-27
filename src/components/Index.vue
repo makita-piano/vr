@@ -9,13 +9,17 @@
           md="9"
         >
           <v-text-field
-            v-model="search"
+            v-model="search_word"
             append-icon="mdi-magnify"
             label="Search"
             single-line
             hide-details
           >
           </v-text-field>
+          <v-row fluid>
+            <v-checkbox v-model="search_checkbox" label="John" value="John" color="primary"></v-checkbox>
+            <v-checkbox v-model="search_checkbox" label="Jacob" value="Jacob"></v-checkbox>
+          </v-row>
         </v-col>
       </v-row>
     </v-card-title>
@@ -24,7 +28,7 @@
       <v-data-table
         :headers="table_headers"
         :items="list_formated(this.list)"
-        :search="search"
+        :search="search_trigger()"
         hide-default-footer
         @click:row="on_click_row"
         :mobile-breakpoint=0
@@ -122,7 +126,8 @@
         dialog: false,
         dialog_item: [],
   			list: [],
-        search: '',
+        search_word: "",
+        search_checkbox: [],
         table_headers: [
           {
             text:  "release_date",
@@ -190,8 +195,13 @@
 
       //search
       filter_devises(value, search, item) {
-        console.log(search);
+        console.log(item);
         return item.devises != ""
+      },
+      search_trigger(){
+        if(this.search_word == "" && this.search_checkbox == ""){
+          return "free";
+        }
       },
     },
   };
